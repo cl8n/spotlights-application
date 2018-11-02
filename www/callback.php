@@ -64,10 +64,15 @@ $embedFields = array_map(function ($part) {
 
 session_destroy();
 
+if (substr($user->avatar_url, 0, 1) === '/') {
+    $user->avatar_url = 'https://osu.ppy.sh' . $user->avatar_url;
+}
+
 $discordRequestContext = stream_context_create([
     'http' => [
         'method' => 'POST',
         'content' => json_encode([
+            'avatar_url' => $user->avatar_url,
             'content' => "**[$user->username](https://osu.ppy.sh/users/$user->id)** applied to join the **$mode** Spotlights team! They can be contacted at @$discord.",
             'embeds' => [
                 [
