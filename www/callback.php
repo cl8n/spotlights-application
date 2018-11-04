@@ -1,12 +1,6 @@
 <?php
 
-const QUESTIONS = [
-    'q1' => 'How long have you been playing the game for?',
-    'q2' => 'Why do you want to join this team? What do you wish to do here?',
-    'q3' => 'Do you have any experience selecting maps for other projects or community tournaments? If so, which ones?',
-    'q4' => 'What kind of other experience do you have in the game (mapping, modding, playing regularly)?',
-    'q5' => 'Select your 5 favourite beatmap and explain to us briefly why did you choose those.',
-];
+require_once __DIR__ . '/../constants.php';
 
 if (empty($_GET['code'])) {
     http_response_code(403);
@@ -14,7 +8,6 @@ if (empty($_GET['code'])) {
     exit;
 }
 
-$config = require __DIR__ . '/../config.php';
 session_start();
 
 if ($_SESSION['_state'] !== base64_decode($_GET['state'])) {
@@ -49,18 +42,12 @@ $user = json_decode($userResponse);
 $mode = $_SESSION['mode'];
 $discord = $_SESSION['discord'];
 
-$embedFields = array_map(function ($part) {
+$embedFields = array_map(function ($key, $value) {
     return [
-        'name' => QUESTIONS[$part],
-        'value' => $_SESSION[$part],
+        'name' => $value,
+        'value' => $_SESSION[$key],
     ];
-}, [
-    'q1',
-    'q2',
-    'q3',
-    'q4',
-    'q5',
-]);
+}, array_keys(FIELDS_QUESTIONS), array_values(FIELDS_QUESTIONS));
 
 session_destroy();
 
