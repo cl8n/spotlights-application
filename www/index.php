@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../constants.php';
+require_once __DIR__ . '/../include.php';
 
 ?>
 <!DOCTYPE html>
@@ -20,12 +20,12 @@ require_once __DIR__ . '/../constants.php';
         Discord tag: <input name="discord" pattern=".+#\d{4}" required/>
         <br/>
 
-        <?php foreach (FIELDS_QUESTIONS as $field => $question): ?>
-            <?= $question ?>
+        <?php for ($i = 0; $i < sizeof($config['application']); $i++): ?>
+            <?= $config['application'][$i] ?>
             <br/>
-            <textarea name="<?= $field ?>" cols="50" rows="10" required></textarea>
+            <textarea name="q<?= $i ?>" cols="50" rows="10" required></textarea>
             <br/>
-        <?php endforeach; ?>
+        <?php endfor; ?>
 
         <input type="submit" value="Verify osu! account and send application"/>
     </form>
