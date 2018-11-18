@@ -15,7 +15,11 @@ switch ($path) {
         require __DIR__ . '/../pages/application.php';
         break;
 
-    case '/submitted':
+    case '/callback':
         require __DIR__ . '/../pages/callback.php';
+        break;
+
+    case '/submitted':
+        require __DIR__ . '/../pages/submitted.php';
         break;
 }
