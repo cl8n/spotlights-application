@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../include.php';
-
 session_start();
 
 $_SESSION['_state'] = random_bytes(64);

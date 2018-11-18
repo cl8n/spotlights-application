@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../include.php';
-
 if (empty($_GET['code'])) {
     http_response_code(403);
     echo 'User denied authorization';
