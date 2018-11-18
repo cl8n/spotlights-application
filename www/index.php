@@ -7,7 +7,7 @@ require_once __DIR__ . '/../include.php';
 <html>
     <head>
         <title>Spotlights Team Application Form</title>
-        <link rel="shortcut icon" href="https://s.ppy.sh/favicon-32x32.png" /> 
+        <link rel="icon" type="image/png" href="https://s.ppy.sh/favicon-32x32.png" />
     </head>
     <body>
         <style>
