@@ -25,7 +25,7 @@ require_once __DIR__ . '/../include.php';
                 text-align: center;
                 background-color: #fff;
                 max-width: 550px;
-                max-height: 1600px;
+                min-height: 1100px;
                 align-content: center;
                 border-radius: 16px;
                 color: #262626;
@@ -35,41 +35,46 @@ require_once __DIR__ . '/../include.php';
                 resize: vertical;
                 padding: 10px 20px;
                 overflow: hidden;
-                box-sizing: border-box;
                 line-height: 1.25;
                 color: #262626;
                 outline: none;
                 border: none;
                 margin: 0px;
                 word-wrap: break-word;
-                overflow: auto;
                 background: transparent none repeat scroll 0% 0% !important;
                 transition: none 0s ease 0s;
                 font-size: 13px;
             }
-            
-            #submit {
+                        
+            .button {
                 text-align: center;
                 text-shadow: 0 1px 3px rgba(0,0,0,.75);
                 color: #fff;
                 vertical-align: middle;
-                display: inline-block;
                 background-image: url("https://osu.ppy.sh/images/backgrounds/button.svg");
                 background-color: #4ad;
                 background-size: 200px;
                 background-position: 50% 50%
                 min-width: 300px;
-                padding: 10px 20px;
+                padding: 15px 25px;
                 margin-left: 5px;
                 margin-bottom: 10px;
                 font-size: 15px;
                 box-shadow: 0 10px #29b,0 7px 10px rgba(0,0,0,.8);
-                transition: all .1s ease-in-out;
                 border-radius: 4px;
                 border: none;
-                line-height: 1.25;
-                overflow: visible;
                 position: relative;
+            }
+            
+            .button:hover {
+                background-color: #2aa;
+                box-shadow: 0 10px #2aa,0 7px 10px rgba(34, 170, 170, 1);
+            }
+            
+            .button:active {
+                background-color: #2aa;
+                box-shadow: 0 10px #2aa,0 7px 10px rgba(34, 170, 170, 1);
+                transform: translateY(2px);
             }
             
             #mode {
@@ -103,13 +108,13 @@ require_once __DIR__ . '/../include.php';
                 <?php for ($i = 0; $i < sizeof($config['application']); $i++): ?>
                     <?= $config['application'][$i] ?>
                         <br/>
-                            <br/>                                
-                                <textarea name="q<?= $i ?>" id="textarea" placeholder="Enter text here..." cols="50" rows="10" maxlength="1250" required></textarea>
-                            <br/>
+                        <br/>                                
+                            <textarea name="q<?= $i ?>" id="textarea" placeholder="Enter text here..." cols="50" rows="10" maxlength="1250" required></textarea>
+                        <br/>
                         <br/>
                     <?php endfor; ?>
                 <div>
-                    <input type="submit" id="submit" value="Verify osu! account and send application"/>
+                    <input type="submit" class="button" value="Verify osu! account and send application"/>
                 </div>
                 <br/>
             </form>
