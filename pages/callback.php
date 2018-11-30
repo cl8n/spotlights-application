@@ -38,13 +38,8 @@ $user = json_decode($userResponse);
 $mode = $_SESSION['mode'];
 $discord = $_SESSION['discord'];
 
-$embedFields = [];
 $trelloDescription = "osu!: https://osu.ppy.sh/users/$user->id\nMode: $mode\nDiscord: @$discord";
 for ($i = 0; $i < sizeof($config['application']); $i++) {
-    $embedFields []= [
-        'name' => $config['application'][$i],
-        'value' => $_SESSION["q$i"],
-    ];
     $trelloDescription .= "\n\n**{$config['application'][$i]}**\n{$_SESSION["q$i"]}";
 }
 
@@ -101,7 +96,6 @@ web_request($config['discord']['webhook'], [
                 'url' => $card->url,
                 'thumbnail' => ['url' => $user->avatar_url],
                 'description' => "Application: $card->url\nosu!: https://osu.ppy.sh/users/$user->id\nMode: $mode\nDiscord: @$discord",
-                'fields' => $embedFields,
             ]],
         ]),
     ],
