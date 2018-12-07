@@ -15,7 +15,7 @@ foreach ($allFields as $var) {
 
 $query = http_build_query([
     'response_type' => 'code',
-    'scope' => '',
+    'scope' => 'identify',
     'client_id' => $config['osu']['client_id'],
     'redirect_uri' => $config['osu']['redirect_uri'],
     'state' => base64_encode($_SESSION['_state']),
