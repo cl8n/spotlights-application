@@ -22,8 +22,8 @@
                 <br/>
                 <br/>
 
-                <?php for ($i = 0; $i < sizeof($config['application']); $i++): ?>
-                    <?= $config['application'][$i] ?>
+                <?php for ($i = 0; $i < count($questions); $i++): ?>
+                    <?= $questions[$i] ?>
                         <br/>
                         <br/>
                             <textarea name="q<?= $i ?>" id="textarea" placeholder="Enter text here..." cols="50" rows="10" maxlength="1250" required></textarea>

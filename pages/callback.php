@@ -39,8 +39,8 @@ $mode = $_SESSION['mode'];
 $discord = $_SESSION['discord'];
 
 $trelloDescription = "osu!: https://osu.ppy.sh/users/$user->id\nMode: $mode\nDiscord: @$discord";
-for ($i = 0; $i < sizeof($config['application']); $i++) {
-    $trelloDescription .= "\n\n**{$config['application'][$i]}**\n{$_SESSION["q$i"]}";
+for ($i = 0; $i < count($questions); $i++) {
+    $trelloDescription .= "\n\n**{$questions[$i]}**\n{$_SESSION["q$i"]}";
 }
 
 session_destroy();

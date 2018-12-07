@@ -39,7 +39,14 @@ function web_request($url, $options, $params = []) {
     );
 }
 
+$questions = [
+    'Why do you want to join the Spotlights Team?',
+    'How would you be able to further assist the Spotlights Team?',
+    'Do you have any mapping or modding experience? How much?',
+    'Select two beatmaps you think are worthy of spotlight and explain why (Ranked maps only).',
+];
+
 $allFields = ['discord', 'mode'];
-for ($i = 0; $i < sizeof($config['application']); $i++) {
+for ($i = 0; $i < count($questions); $i++) {
     $allFields []= "q$i";
 }

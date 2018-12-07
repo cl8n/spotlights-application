@@ -1,11 +1,6 @@
 <?php
 
 return [
-    'application' => [
-        // Accepts a variable amount of questions
-        '',
-    ],
-
     'discord' => [
         'invite' => '',
         'webhook' => '',
