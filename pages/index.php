@@ -7,7 +7,6 @@
     </head>
     <body>
         <div id="content">
-            <br/>
             <form method="post" action="/submit">
                 Game mode: <input name="mode" id="mode" placeholder="Choose one" list="modes" required/>
                     <datalist id="modes">
@@ -16,24 +15,15 @@
                         <option value="osu!catch">
                         <option value="osu!mania">
                     </datalist>
-                <br/>
-                <br/>
-                    Discord tag: <input name="discord" id="discord" placeholder="placeholder#0000" pattern=".+#\d{4}" required/>
-                <br/>
-                <br/>
-
-                <?php for ($i = 0; $i < count($questions); $i++): ?>
-                    <?= $questions[$i] ?>
-                        <br/>
-                        <br/>
-                            <textarea name="q<?= $i ?>" id="textarea" placeholder="Enter text here..." cols="50" rows="10" maxlength="1250" required></textarea>
-                        <br/>
-                        <br/>
-                    <?php endfor; ?>
+            <p>Discord tag: <input name="discord" id="discord" placeholder="placeholder#0000" pattern=".+#\d{4}" required/></p>              
+                <p><?php for ($i = 0; $i < count($questions); $i++): ?>
+                    <?php echo $questions[$i]; ?>
+                    <p><textarea name="q<?= $i ?>" id="textarea<?= $i ?>" placeholder="Enter text here..." cols="50" rows="10"  maxlength="<?= $limits[$i]?>" required></textarea></p>
+                <?php endfor; ?>
+                </p>
                 <div>
                     <input type="submit" class="button" value="Verify osu! account and send application"/>
                 </div>
-                <br/>
             </form>
         </div>
     </body>

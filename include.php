@@ -43,10 +43,18 @@ $questions = [
     'Why do you want to join the Spotlights Team?',
     'How would you be able to further assist the Spotlights Team?',
     'Do you have any mapping or modding experience? How much?',
-    'Select two beatmaps you think are worthy of spotlight and explain why (Ranked maps only).',
+    'Select three beatmaps you think are worthy of spotlight and explain why (Ranked maps only).'
+];
+
+$limits = [
+    500,
+    500,
+    550,
+    2000
 ];
 
 $allFields = ['discord', 'mode'];
 for ($i = 0; $i < count($questions); $i++) {
     $allFields []= "q$i";
 }
+
