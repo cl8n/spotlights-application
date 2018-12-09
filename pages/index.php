@@ -28,14 +28,14 @@
 
             <div class="question question--grouped">
                 <span class="question__title">Discord tag:</span>
-                <input name="discord" placeholder="placeholder#0000" pattern=".+#\d{4}" required/>
+                <input name="discord" placeholder="username#0000" pattern=".+#\d{4}" required/>
             </div>
 
             <?php for ($i = 0; $i < count($questions); $i++): ?>
                 <div class="question">
                     <span class="question__title"><?= $questions[$i] ?></span>
                     <div class="textarea-wrapper">
-                        <textarea name="q<?= $i ?>" placeholder="Enter text here..." maxlength="1250" oninput="updateCounter(this.name, this.value.length)" required></textarea>
+                        <textarea name="q<?= $i ?>" placeholder="Write your response here" maxlength="1250" oninput="updateCounter(this.name, this.value.length)" required></textarea>
                         <div class="counter"><span id="q<?= $i ?>-counter">0</span> / 1250</div>
                     </div>
                 </div>
