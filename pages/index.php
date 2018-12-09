@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Spotlights Team Application Form</title>
+        <title>osu! Spotlights Team Application</title>
         <link rel="icon" type="image/png" href="https://s.ppy.sh/favicon-32x32.png" />
         <link rel="stylesheet" type="text/css" href="/style.css" />
     </head>
     <body>
         <div id="content">
             <br/>
+            <h1>osu! Spotlights Team Application</h1>
+
             <form method="post" action="/submit">
                 Game mode: <input name="mode" id="mode" placeholder="Choose one" list="modes" required/>
                     <datalist id="modes">
