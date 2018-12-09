@@ -40,10 +40,17 @@ function web_request($url, $options, $params = []) {
 }
 
 $questions = [
-    'Why do you want to join the Spotlights Team?',
-    'How would you be able to further assist the Spotlights Team?',
+    'Why do you want to join the osu! Spotlights Team?',
+    'How would you be able to further assist the osu! Spotlights Team?',
     'Do you have any mapping or modding experience? How much?',
-    'Select two beatmaps you think are worthy of spotlight and explain why (Ranked maps only).',
+    'Select three beatmaps that you think would be worthy for Spotlights, and explain why. Please include Ranked maps only.'
+];
+
+$limits = [
+    500,
+    500,
+    500,
+    2000
 ];
 
 $allFields = ['discord', 'mode'];
