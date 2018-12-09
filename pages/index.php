@@ -41,9 +41,7 @@
                     </div>
                 <?php endfor; ?>
 
-                <div>
-                    <input type="submit" class="button" value="Verify osu! account and send application"/>
-                </div>
+                <input type="submit" class="button" value="Verify osu! account and send application"/>
             </form>
         </div>
     </body>
