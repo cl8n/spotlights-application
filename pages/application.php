@@ -10,6 +10,13 @@ foreach ($allFields as $var) {
         exit;
     }
 
+    if (preg_match('/q(\d+)/', $var, $matches) === 1
+        && mb_strlen($_POST[$var]) > $limits[$matches[1]]) {
+        http_response_code(400);
+        echo "Request value is too large: $var";
+        exit;
+    }
+
     $_SESSION[$var] = $_POST[$var];
 }
 
