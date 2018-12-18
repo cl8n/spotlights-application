@@ -60,6 +60,11 @@ input::placeholder {
     background-color: #f9c1;
 }
 
+.grid {
+    display: table;
+    margin-left: 8.4em;
+}
+
 textarea {
     resize: none;
     padding: 0;
@@ -88,31 +93,26 @@ textarea::placeholder {
 
 .button {
     text-align: center;
-    text-shadow: 0 1px 3px rgba(0,0,0,.75);
+    text-shadow: 0 1px 3px rgba(0,0,0,.85);
     color: #fff;
     vertical-align: middle;
     background-image: url("https://osu.ppy.sh/images/backgrounds/button.svg");
-    background-color: #4ad;
+    background-color: #f8b;
     background-size: 200px;
     background-position: 50% 50%;
     min-width: 300px;
-    padding: 15px 25px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    box-shadow: 0 10px #29b,0 7px 10px rgba(0,0,0,.8);
-    border-radius: 4px;
+    padding: 20px 25px;
+    font-size: 16px;
+    border-radius: 1em;
     border: none;
     position: relative;
 }
 
 .button:hover {
-    background-color: #2aa;
-    box-shadow: 0 10px #2aa,0 7px 10px rgba(34, 170, 170, 1);
+    background-color: #f6b;
 }
 
 .button:active {
-    background-color: #2aa;
-    box-shadow: 0 10px #2aa,0 7px 10px rgba(34, 170, 170, 1);
+    background-color: #f6b;
     transform: translateY(2px);
 }
