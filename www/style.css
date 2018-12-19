@@ -60,11 +60,6 @@ input::placeholder {
     background-color: #f9c1;
 }
 
-.grid {
-    display: table;
-    margin-left: 8.4em;
-}
-
 textarea {
     resize: none;
     padding: 0;
