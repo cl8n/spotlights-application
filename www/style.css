@@ -87,27 +87,22 @@ textarea::placeholder {
 }
 
 .button {
-    text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.85);
     color: #fff;
-    vertical-align: middle;
     background-image: url("https://osu.ppy.sh/images/backgrounds/button.svg");
-    background-color: #f8b;
+    background-color: #f9c;
     background-size: 200px;
-    background-position: 50% 50%;
-    min-width: 300px;
+    background-position: center;
     padding: 20px 25px;
-    font-size: 16px;
-    border-radius: 1em;
     border: none;
-    position: relative;
 }
 
-.button:hover {
-    background-color: #f6b;
+.button[type=submit] {
+    /* Override input's margin-left */
+    margin-left: 0;
+    margin-top: 0.5em;
 }
 
-.button:active {
-    background-color: #f6b;
-    transform: translateY(2px);
+.button:hover, .button:active {
+    background-color: #f8b;
 }
