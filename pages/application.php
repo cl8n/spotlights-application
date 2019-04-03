@@ -11,7 +11,7 @@ foreach ($allFields as $var) {
     }
 
     if (preg_match('/q(\d+)/', $var, $matches) === 1
-        && mb_strlen($_POST[$var]) > $limits[$matches[1]]) {
+        && mb_strlen(str_replace("\r\n", "\n", $_POST[$var])) > $limits[$matches[1]]) {
         http_response_code(400);
         echo "Request value is too large: $var";
         exit;
