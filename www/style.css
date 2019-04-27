@@ -37,6 +37,11 @@ form {
     font-size: 1.2em;
 }
 
+.question-optional {
+    opacity: 0.5;
+    margin-left: 1em;
+}
+
 input {
     padding: 0.5em;
     border: 1px solid #f9c;

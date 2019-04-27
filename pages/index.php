@@ -33,7 +33,12 @@
 
             <?php for ($i = 0; $i < count($questions); $i++): ?>
                 <div class="question">
-                    <span class="question__title"><?= $questions[$i][0] ?></span>
+                    <span class="question__title">
+                        <?= $questions[$i][0] ?>
+                        <?php if (!$questions[$i][2]): ?>
+                            <span class="question-optional">(optional)</span>
+                        <?php endif; ?>
+                    </span>
                     <div class="textarea-wrapper">
                         <textarea
                             name="q<?= $i ?>"
