@@ -41,6 +41,7 @@
                             maxlength="<?= $questions[$i][1] ?>"
                             oninput="updateCounter(this.name, this.value.length)"
                             <?= $questions[$i][2] ? 'required' : '' ?>
+                            style="height: <?= min($questions[$i][1] / 50, 20) ?>em;"
                         ></textarea>
                         <div class="counter">
                             <span id="q<?= $i ?>-counter">0</span> / <?= $questions[$i][1] ?>
