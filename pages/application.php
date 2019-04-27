@@ -2,7 +2,6 @@
 
 session_start();
 
-$_SESSION['_state'] = random_bytes(64);
 foreach ($allFields as $var) {
     if ($var[1] && empty($_POST[$var[0]])) {
         http_response_code(400);
@@ -25,7 +24,7 @@ $query = http_build_query([
     'scope' => 'identify',
     'client_id' => $config['osu']['client_id'],
     'redirect_uri' => $config['osu']['redirect_uri'],
-    'state' => base64_encode($_SESSION['_state']),
+    'state' => base64_encode($_SESSION['_state'] = random_bytes(64)),
 ]);
 
 header("Location: https://osu.ppy.sh/oauth/authorize?$query");
