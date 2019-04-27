@@ -40,9 +40,8 @@ function web_request($url, $options, $params = []) {
 }
 
 $questions = [
-    ['Why do you want to join the osu! Spotlights Team?', 500, true],
-    ['Do you have any mapping or modding experience? How much?', 500, true],
-    ['Select three beatmaps that you think would be worthy for Spotlights, and explain why. Please include Ranked maps only.', 2000, true],
+    ['Do you have any mapping or modding experience? How much?', 200, true],
+    ['Select three Ranked beatmaps that you think would be worthy for Spotlights, and for each one, explain why.', 2000, true],
     ['Are there any other ways that you would like to assist the osu! Spotlights Team beyond selecting maps?', 500, false],
 ];
 
