@@ -33,10 +33,18 @@
 
             <?php for ($i = 0; $i < count($questions); $i++): ?>
                 <div class="question">
-                    <span class="question__title"><?= $questions[$i] ?></span>
+                    <span class="question__title"><?= $questions[$i][0] ?></span>
                     <div class="textarea-wrapper">
-                        <textarea name="q<?= $i ?>" placeholder="Write your response here" maxlength="<?= $limits[$i] ?>" oninput="updateCounter(this.name, this.value.length)" required></textarea>
-                        <div class="counter"><span id="q<?= $i ?>-counter">0</span> / <?= $limits[$i] ?></div>
+                        <textarea
+                            name="q<?= $i ?>"
+                            placeholder="Write your response here"
+                            maxlength="<?= $questions[$i][1] ?>"
+                            oninput="updateCounter(this.name, this.value.length)"
+                            <?= $questions[$i][2] ? 'required' : '' ?>
+                        ></textarea>
+                        <div class="counter">
+                            <span id="q<?= $i ?>-counter">0</span> / <?= $questions[$i][1] ?>
+                        </div>
                     </div>
                 </div>
             <?php endfor; ?>

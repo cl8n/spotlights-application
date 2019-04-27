@@ -40,20 +40,16 @@ function web_request($url, $options, $params = []) {
 }
 
 $questions = [
-    'Why do you want to join the osu! Spotlights Team?',
-    'How would you be able to further assist the osu! Spotlights Team?',
-    'Do you have any mapping or modding experience? How much?',
-    'Select three beatmaps that you think would be worthy for Spotlights, and explain why. Please include Ranked maps only.'
+    ['Why do you want to join the osu! Spotlights Team?', 500, true],
+    ['How would you be able to further assist the osu! Spotlights Team?', 500, true],
+    ['Do you have any mapping or modding experience? How much?', 500, true],
+    ['Select three beatmaps that you think would be worthy for Spotlights, and explain why. Please include Ranked maps only.', 2000, true],
 ];
 
-$limits = [
-    500,
-    500,
-    500,
-    2000
+$allFields = [
+    ['discord', true],
+    ['mode', true],
 ];
-
-$allFields = ['discord', 'mode'];
 for ($i = 0; $i < count($questions); $i++) {
-    $allFields []= "q$i";
+    $allFields []= ["q$i", $questions[$i][2]];
 }

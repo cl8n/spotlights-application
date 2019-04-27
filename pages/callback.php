@@ -40,7 +40,7 @@ $discord = $_SESSION['discord'];
 
 $trelloDescription = "osu!: https://osu.ppy.sh/users/$user->id\nMode: $mode\nDiscord: @$discord";
 for ($i = 0; $i < count($questions); $i++) {
-    $trelloDescription .= "\n\n**{$questions[$i]}**\n{$_SESSION["q$i"]}";
+    $trelloDescription .= "\n\n**{$questions[$i][0]}**\n{$_SESSION["q$i"]}";
 }
 
 session_destroy();
