@@ -38,8 +38,7 @@ form {
 }
 
 .question-optional {
-    opacity: 0.5;
-    margin-left: 1em;
+    color: #f9c;
 }
 
 input {
