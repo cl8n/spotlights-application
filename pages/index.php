@@ -17,7 +17,7 @@
         <form method="post" action="/submit">
             <div class="question">
                 <span class="question__title">Game mode:</span>
-                <input name="mode" placeholder="Choose one" list="modes" required/>
+                <input name="mode" placeholder="Choose one" list="modes" autocomplete="off" required/>
                 <datalist id="modes">
                     <option value="osu!">
                     <option value="osu!taiko">
@@ -28,7 +28,7 @@
 
             <div class="question question--grouped">
                 <span class="question__title">Discord tag:</span>
-                <input name="discord" placeholder="username#0000" pattern=".+#\d{4}" required/>
+                <input name="discord" placeholder="username#0000" pattern=".+#\d{4}" autocomplete="off" required/>
             </div>
 
             <?php for ($i = 0; $i < count($questions); $i++): ?>
