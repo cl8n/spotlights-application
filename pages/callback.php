@@ -101,6 +101,7 @@ web_request($config['discord']['webhook'], [
             ]],
         ]),
     ],
+    'type' => 'json',
 ]);
 
 header('Location: /submitted');

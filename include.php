@@ -16,7 +16,9 @@ function web_request($url, $options, $params = []) {
         $query = '?' . http_build_query($options['query']);
     }
 
-    $contextOptions['header'] = "Content-Type: application/x-www-form-urlencoded\r\n";
+    $contextOptions['header'] = !empty($options['type']) && $options['type'] === 'json'
+        ? "Content-Type: application/json\r\n"
+        : "Content-Type: application/x-www-form-urlencoded\r\n";
 
     if (!empty($options['auth'])) {
         switch ($options['auth']) {
